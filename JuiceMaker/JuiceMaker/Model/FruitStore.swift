@@ -1,6 +1,6 @@
 //
 //  JuiceMaker - FruitStore.swift
-//  Created by yagom. 
+//  Created by yagom.
 //  Copyright © yagom academy. All rights reserved.
 //
 
@@ -20,4 +20,13 @@ class FruitStore {
             fruitInventory[fruit] = max(0, currentQuantity + quantity)
         }
     }
+    func checkAvailability(for juiceIngredients: [String: Int]) -> Bool {
+        for (fruit, requiredQuantity) in juiceIngredients {
+            guard let availableQuantity = fruitInventory[fruit], requiredQuantity <= availableQuantity else {
+                return false
+            }
+        }
+        return true
+    }
+    
 }
