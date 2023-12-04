@@ -28,5 +28,19 @@ class FruitStore {
         }
         return true
     }
+    func makeJuice(type: JuiceRecipe) -> String {
+        var  ingredients = type.ingredients
+        for (fruit, quantity) in ingredients {
+            guard let available = fruitInventory[fruit], available >= quantity else {
+                return "재료가 부족하여 \(type.name)를 제조할 수 없습니다."
+            }
+        }
+        for (fruit, quantity) in ingredients {
+            if let available = fruitInventory[fruit], let currentQuantity = fruitInventory[fruit], available >= quantity {
+                fruitInventory[fruit] = currentQuantity - quantity
+            }
+        }
+        return "\(type.name)가 제조되었습니다."
+    }
     
 }
