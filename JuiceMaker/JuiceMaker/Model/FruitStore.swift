@@ -13,32 +13,46 @@ import Foundation
 
 // 과일 저장소 타입
 class FruitStore {
-     var fruitInventory: [String: Int] = [
+    var fruitInventory: [String: Int] = [
         "딸기": 10,
         "바나나": 10,
         "파인애플": 10,
         "키위": 10,
         "망고": 10
     ]
+    func displayCurrentyFruitInventory() {
+        for(fruit, quantity) in fruitInventory {
+            print("\(fruit): 현재고:\(quantity)")
+        }
+    }
+    
+    let notificationName = Notification.Name("currentFruitInventory")
+    
+    func didChangeFruitInventory() {
+        NotificationCenter.default.post(name: notificationName, object: nil, userInfo: fruitInventory)
+        displayCurrentyFruitInventory()
+    }
     
     func updateFruitQuantity(fruit: String, quantity: Int) {
         if let currentQuantity = fruitInventory[fruit] {
             fruitInventory[fruit] = max(0, currentQuantity + quantity)
         }
     }
+    
     func checkAvailability(for juiceIngredients: [String: Int]) -> Bool {
         for (fruit, requiredQuantity) in juiceIngredients {
-            guard let availableQuantity = 
-                    fruitInventory[fruit], requiredQuantity <= availableQuantity 
+            guard let availableQuantity =
+                    fruitInventory[fruit], requiredQuantity <= availableQuantity
             else { return false }
         }
         return true
     }
+    
     func makeJuice(juiceRecipe: JuiceRecipe) -> String {
         var  ingredients = juiceRecipe.ingredients
         for (fruit, quantity) in ingredients {
-            guard let available = 
-                    fruitInventory[fruit], available >= quantity 
+            guard let available =
+                    fruitInventory[fruit], available >= quantity
             else { return "재료가 부족하여 \(juiceRecipe.name)를 제조할 수 없습니다." }
         }
         for (fruit, quantity) in ingredients {
@@ -49,3 +63,7 @@ class FruitStore {
         return "\(juiceRecipe.name)가 제조되었습니다."
     }
 }
+ 
+
+
+
