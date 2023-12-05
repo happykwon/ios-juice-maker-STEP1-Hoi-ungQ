@@ -16,7 +16,6 @@ enum JuiceRecipe {
     case strawberryBanana
     case mango
     case mangoKiwi
-    
     var name: String {
         switch self {
         case .strawberry: return "딸기쥬스"
@@ -28,7 +27,6 @@ enum JuiceRecipe {
         case .mangoKiwi: return "망고키위쥬스"
         }
     }
-    
     var ingredients: [String: Int] {
         switch self {
         case .strawberry: return ["딸기": 16]
