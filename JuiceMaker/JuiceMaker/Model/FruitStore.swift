@@ -33,10 +33,15 @@ class FruitStore {
         displayCurrentyFruitInventory()
     }
     
+    @objc func handleNotification(_ notification: Notification) {
+        didChangeFruitInventory()
+    }
+    
     func updateFruitQuantity(fruit: String, quantity: Int) {
         if let currentQuantity = fruitInventory[fruit] {
             fruitInventory[fruit] = max(0, currentQuantity + quantity)
         }
+        displayCurrentyFruitInventory()
     }
     
     func checkAvailability(for juiceIngredients: [String: Int]) -> Bool {
