@@ -13,6 +13,6 @@ struct JuiceMaker {
         self.fruitStore = fruitStore
     }
     func makeJuice(type: JuiceRecipe) -> String {
-        return fruitStore.makeJuice(type: type)
+        return fruitStore.makeJuice(juiceRecipe: type)
     }
 }
