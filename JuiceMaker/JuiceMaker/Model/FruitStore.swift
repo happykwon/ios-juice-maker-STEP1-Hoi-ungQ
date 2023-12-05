@@ -20,28 +20,34 @@ class FruitStore {
         "키위": 10,
         "망고": 10
     ]
-    func displayCurrentyFruitInventory() {
-        for(fruit, quantity) in fruitInventory {
-            print("\(fruit): 현재고:\(quantity)")
+    private func displayCurrentyFruitInventory(fruit: String, quantity: Int) {
+        guard let currentQuantity = fruitInventory[fruit] else {
+            print("해당 과일의 재고가 없습니다.")
+            return
         }
+        let updatedQuantity = currentQuantity + quantity
+        fruitInventory[fruit] = updatedQuantity
+        print("재고변경.\(fruit): \(updatedQuantity)")
     }
     
-    let notificationName = Notification.Name("currentFruitInventory")
     
-    func didChangeFruitInventory() {
-        NotificationCenter.default.post(name: notificationName, object: nil, userInfo: fruitInventory)
-        displayCurrentyFruitInventory()
-    }
+//    let notificationName = Notification.Name("currentFruitInventory")
+//
+//    func didChangeFruitInventory() {
+//        NotificationCenter.default.post(name: notificationName, object: nil, userInfo:fruitInventory)
+//    }
     
-    @objc func handleNotification(_ notification: Notification) {
-        didChangeFruitInventory()
-    }
+//    @objc func handleNotification(_ notification: Notification) {
+//        if notification.name == Notification.Name("currentFruitInventory") {
+//            didChangeFruitInventory()
+//        }
+//    }
     
     func updateFruitQuantity(fruit: String, quantity: Int) {
         if let currentQuantity = fruitInventory[fruit] {
             fruitInventory[fruit] = max(0, currentQuantity + quantity)
         }
-        displayCurrentyFruitInventory()
+        displayCurrentyFruitInventory(fruit: fruit, quantity: quantity)
     }
     
     func checkAvailability(for juiceIngredients: [String: Int]) -> Bool {
@@ -66,6 +72,16 @@ class FruitStore {
             }
         }
         return "\(juiceRecipe.name)가 제조되었습니다."
+        //        @objc func
+    }
+}
+struct JuiceMaker {
+    let fruitStore: FruitStore
+    init(fruitStore: FruitStore) {
+        self.fruitStore = fruitStore
+        func makeJuice(type: JuiceRecipe) -> String {
+            return fruitStore.makeJuice(juiceRecipe: type)
+        }
     }
 }
  
