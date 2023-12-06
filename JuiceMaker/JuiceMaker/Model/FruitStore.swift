@@ -5,12 +5,6 @@
 //
 
 import Foundation
-
-//1. checkAvailability에서
-//2. displayCurrentInventory = 남은재고 파악하는 메서드 추가하기
-
-
-
 // 과일 저장소 타입
 class FruitStore {
     var fruitInventory: [String: Int] = [
@@ -31,12 +25,14 @@ class FruitStore {
     }
     
     
+ //MARK: 노티피케이션 구현 중
+    
 //    let notificationName = Notification.Name("currentFruitInventory")
 //
 //    func didChangeFruitInventory() {
 //        NotificationCenter.default.post(name: notificationName, object: nil, userInfo:fruitInventory)
 //    }
-    
+//    
 //    @objc func handleNotification(_ notification: Notification) {
 //        if notification.name == Notification.Name("currentFruitInventory") {
 //            didChangeFruitInventory()
@@ -72,18 +68,9 @@ class FruitStore {
             }
         }
         return "\(juiceRecipe.name)가 제조되었습니다."
-        //        @objc func
     }
 }
-struct JuiceMaker {
-    let fruitStore: FruitStore
-    init(fruitStore: FruitStore) {
-        self.fruitStore = fruitStore
-        func makeJuice(type: JuiceRecipe) -> String {
-            return fruitStore.makeJuice(juiceRecipe: type)
-        }
-    }
-}
+
  
 
 
