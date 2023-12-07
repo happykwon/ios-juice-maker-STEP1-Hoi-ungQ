@@ -29,3 +29,6 @@ struct JuiceMaker {
         }
     }
 }
+
+var test2 = JuiceMaker()
+

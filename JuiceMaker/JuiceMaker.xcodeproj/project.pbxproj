@@ -46,7 +46,6 @@
 		70B096052B1EC3450054EC5D /* Enum */ = {
 			isa = PBXGroup;
 			children = (
-				70B096062B1EC3520054EC5D /* JuiceRecipe.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -65,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				C71CD66A266C7ACB0038B9CB /* FruitStore.swift */,
+				70B096062B1EC3520054EC5D /* JuiceRecipe.swift */,
 				C73DAF4B255D0D0400020D38 /* JuiceMaker.swift */,
 			);
 			path = Model;
