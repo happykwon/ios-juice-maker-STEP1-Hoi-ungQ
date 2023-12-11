@@ -1,9 +1,4 @@
-//
-//  JuiceRecipe.swift
-//  JuiceMaker
-//
-//  Created by 권태호 on 05/12/2023.
-//
+
 
 import Foundation
 

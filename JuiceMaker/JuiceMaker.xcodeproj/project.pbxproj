@@ -46,6 +46,7 @@
 		70B096052B1EC3450054EC5D /* Enum */ = {
 			isa = PBXGroup;
 			children = (
+				70B096062B1EC3520054EC5D /* JuiceRecipe.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -63,8 +64,8 @@
 		C71CD66F266C7B500038B9CB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				70B096052B1EC3450054EC5D /* Enum */,
 				C71CD66A266C7ACB0038B9CB /* FruitStore.swift */,
-				70B096062B1EC3520054EC5D /* JuiceRecipe.swift */,
 				C73DAF4B255D0D0400020D38 /* JuiceMaker.swift */,
 			);
 			path = Model;
@@ -99,7 +100,6 @@
 		C73DAF35255D0CDD00020D38 /* JuiceMaker */ = {
 			isa = PBXGroup;
 			children = (
-				70B096052B1EC3450054EC5D /* Enum */,
 				C71CD66D266C7B470038B9CB /* Controller */,
 				C71CD66F266C7B500038B9CB /* Model */,
 				C71CD671266C7B570038B9CB /* View */,
