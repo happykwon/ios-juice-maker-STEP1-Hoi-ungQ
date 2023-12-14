@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DCG-dP-Fms">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DCG-dP-Fms">
     <device id="retina6_0" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -246,7 +246,9 @@
                         <outlet property="banana" destination="gvk-pA-Lw5" id="CSh-Fx-2iZ"/>
                         <outlet property="kiwi" destination="FZq-de-TJG" id="rNc-gP-rx3"/>
                         <outlet property="mango" destination="3Ce-SU-JeH" id="FkW-M0-ZP2"/>
+                        <outlet property="mangokiwiJuiceButton" destination="ngP-kF-Yii" id="b1j-Rf-myf"/>
                         <outlet property="pineApple" destination="ccQ-Dk-PuY" id="tTL-YS-1WT"/>
+                        <outlet property="strawBananaJuiceMakeButton" destination="hrc-2F-fzl" id="6LG-qw-kvR"/>
                         <outlet property="strawberry" destination="Qas-vP-td6" id="oLf-c1-6La"/>
                     </connections>
                 </viewController>
