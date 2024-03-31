@@ -1,5 +1,6 @@
 # ios-juice-maker
 Sessac yagomAcademy 두번째 쥬스메이커 프로젝트 저장소입니다. 
+
 개발기간 2023.12.05 ~ 12.22
 
 ## Step 1 : 쥬스 메이커 타입 정의
